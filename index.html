@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR Code Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body.dark .header {
+      background-color: #111827;
+      color: #f9fafb;
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">QRGen</div>
+    <div class="menu-toggle" id="menuToggle">&#9776;</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#fitur">Fitur</a></li>
+      <li><a href="#panduan">Panduan</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li>
+        <label class="switch">
+          <input type="checkbox" id="themeSwitch" />
+          <span class="slider"></span>
+        </label>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>QR Code Generator</h1>
+  </header>
+
+  <!-- DESKRIPSI -->
+  <section class="description-box" id="fitur">
+    <h2>Apa itu QR Code Generator?</h2>
+    <p>
+      QR Code Generator adalah alat online yang membantu Anda membuat QR Code kustom secara cepat dan gratis.
+    </p>
+    <ul>
+      <li>🔹 Tambahkan logo ke tengah QR</li>
+      <li>🎨 Pilih warna QR & latar belakang</li>
+      <li>📀 Pilih ukuran QR sesuai kebutuhan</li>
+      <li>📅 Unduh hasil sebagai PNG atau SVG</li>
+      <li>💼 Sekarang bisa membuat QR vCard (kartu nama digital)</li>
+    </ul>
+  </section>
+
+  <!-- FORM QR CODE UTAMA -->
+  <div class="container">
+    <div class="form-area">
+      <input type="text" id="text" placeholder="Masukkan teks atau tautan" />
+      <input type="file" id="logoInput" accept="image/*" />
+      
+      <label for="colorDark">Warna QR:</label>
+      <input type="color" id="colorDark" value="#000000" />
+      
+      <label for="colorLight">Warna Latar:</label>
+      <input type="color" id="colorLight" value="#ffffff" />
+      
+      <label for="sizeSelect">Ukuran:</label>
+      <select id="sizeSelect">
+        <option value="128">128x128</option>
+        <option value="256" selected>256x256</option>
+        <option value="512">512x512</option>
+      </select>
+
+      <label for="formatSelect">Format:</label>
+      <select id="formatSelect">
+        <option value="png">PNG</option>
+        <option value="svg">SVG</option>
+      </select>
+
+      <button onclick="generateQRCode()">Buat QR Code</button>
+      <button onclick="downloadQRCode()" id="downloadBtn" style="display: none;">Download QR Code</button>
+    </div>
+
+    <div id="qrcode"></div>
+  </div>
+
+  <!-- FORM VCARD QR CODE -->
+  <div class="container">
+    <div class="form-area">
+      <h2>Buat QR Code vCard</h2>
+      <input type="text" id="vName" placeholder="Nama Lengkap" />
+      <input type="text" id="vPhone" placeholder="Nomor Telepon" />
+      <input type="email" id="vEmail" placeholder="Email" />
+      <input type="text" id="vTitle" placeholder="Jabatan" />
+      <input type="text" id="vOrg" placeholder="Perusahaan" />
+      <input type="text" id="vAddress" placeholder="Alamat" />
+      <input type="url" id="vWebsite" placeholder="Website" />
+      <button onclick="generateVCardQRCode()">Buat QR vCard</button>
+      <button onclick="downloadQRCode()" id="downloadVCardBtn" style="display: none;">Download vCard</button>
+    </div>
+
+    <div id="vcardQrcode"></div>
+  </div>
+
+  <!-- FAQ & Kontak -->
+  <section id="faq" class="description-box">
+    <h2>FAQ</h2>
+    <p><strong>Apakah data saya aman?</strong><br>Ya. Semua proses dilakukan di browser Anda, tanpa disimpan di server.</p>
+  </section>
+
+  <section id="kontak" class="description-box">
+    <h2>Kontak</h2>
+    <p>Email: rapedia9@gmail.com</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 QRGen. Dibuat dengan ❤️</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

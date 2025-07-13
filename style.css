@@ -1,0 +1,271 @@
+/* === RESET & GLOBAL === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9fafb;
+  color: #1f2937;
+  transition: background-color 0.3s, color 0.3s;
+  padding-bottom: 40px;
+}
+
+h1, h2 {
+  margin-bottom: 0.5em;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* === NAVBAR === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 14px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1f2937;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links li a {
+  color: #374151;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #2563eb;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* === DARK MODE TOGGLE === */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: #2563eb;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* === HEADER & SECTIONS === */
+.header {
+  text-align: center;
+  padding: 40px 20px 20px;
+  background-color: #f3f4f6;
+}
+
+.description-box {
+  background: #ffffff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 700px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.04);
+}
+
+/* === FORM === */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.form-area {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  width: 100%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+select,
+input[type="color"] {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  width: 100%;
+}
+
+button {
+  padding: 10px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+#qrcode,
+#vcardQrcode {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* === FOOTER === */
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding: 20px;
+  color: #6b7280;
+}
+
+/* === DARK MODE === */
+body.dark {
+  background-color: #111827;
+  color: #e5e7eb;
+}
+
+body.dark .navbar {
+  background-color: #1f2937;
+  border-bottom: 1px solid #374151;
+}
+
+body.dark .nav-links li a,
+body.dark .logo {
+  color: #e5e7eb;
+}
+
+body.dark .nav-links {
+  background-color: #1f2937;
+}
+
+body.dark .description-box,
+body.dark .form-area {
+  background-color: #1f2937;
+  color: #e5e7eb;
+}
+
+body.dark input,
+body.dark select {
+  background-color: #374151;
+  color: #f9fafb;
+  border: 1px solid #4b5563;
+}
+
+body.dark button {
+  background-color: #3b82f6;
+}
+
+body.dark .header {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+body.dark .form-area h2 {
+  color: #f9fafb;
+}
+
+/* === VCARD QR CODE SECTION === */
+.container .form-area h2 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #1f2937;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: absolute;
+    top: 64px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 8px 0;
+  }
+
+  body.dark .nav-links {
+    background-color: #1f2937;
+  }
+}
