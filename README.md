@@ -20,3 +20,20 @@ QR Code Generator adalah alat berbasis web untuk membuat QR Code kustom dengan m
 
 ## 📁 Struktur Proyek
 
+
+## 📦 Teknologi yang Digunakan
+
+- HTML5, CSS3, JavaScript (Vanilla)
+- [QRCode.js](https://github.com/soldair/node-qrcode) (library QR Code)
+- GitHub Pages (untuk hosting statis)
+
+## 🔗 Demo
+
+[👉 Lihat Demo Langsung di GitHub Pages](https://username.github.io/qr-generator)
+
+> Ganti `username` dengan nama akun GitHub kamu.
+
+## 📝 Lisensi
+
+Proyek ini bebas digunakan untuk keperluan pribadi dan komersial.  
+Lisensi: [MIT License](LICENSE)
